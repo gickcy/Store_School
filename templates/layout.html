@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchoolStore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("https://e0.pxfuel.com/wallpapers/335/342/desktop-wallpaper-empty-school-classroom-with-back-to-school-writing-real-classroom-background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #a1ba70;
+            padding: 1em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+        nav a:hover {
+            background-color: #8f9e5c;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropbtn {
+    background-color: #a1ba70;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropbtn:hover {
+    background-color: #8f9e5c;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+        .dropdown-content a:hover {
+            background-color: #8f9e5c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        section {
+            padding: 2em;
+            /* Semi-transparent white background */
+            border-radius: 8px;
+            margin-top: 50px;
+            color: rgb(255, 255, 255);
+            font-weight: 100;
+            text-align: center;
+            background-color:rgb(6, 20, 1) ;
+            opacity: .7;
+            height:max-content;
+            width:fit-content;
+            margin-left: 30%;
+        }
+        span{
+            color:#132013 ;
+            font-size: 17px;
+        }
+        span:hover{
+            color: white;
+        }
+        .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #a1ba70;
+   color: white;
+   text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+    <nav>
+        <a href="{% url 'home'%}">Home</a>
+        {% if user.is_authenticated %}
+           
+            <span> {{ user.username }}</span>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+        <div class="dropdown">
+            <button class="dropbtn">Departments</button>
+            <div class="dropdown-content">
+                <a href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+                <a href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+                <a href="https://en.wikipedia.org/wiki/Mathematics">Mathematics</a>
+                <a href="https://en.wikipedia.org/wiki/Literature">Literature</a>
+                <a href="https://en.wikipedia.org/wiki/Science">Science</a>
+            </div>
+        </div>
+    </nav>
+</div>
+{% block body %}{% endblock %}
+<div class="footer">
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; School Store. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

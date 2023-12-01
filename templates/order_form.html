@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    {% block body %}
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .login-container {
+            width: 80%;
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: rgb(182, 175, 77);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+.login-container label{
+    color: rgb(6, 6, 6);
+    float: left;
+}
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        .login-container button {
+            background-color: #132013;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+.login-container button:hover{
+    background-color: #234124;
+}
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p a {
+            color: #234124;
+            text-decoration: none;
+        }
+        h2{
+            text-align: center;
+            font-weight: 300px;
+            font: xx-large;
+        }
+
+        @media screen and (max-width: 600px) {
+            .login-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+    <h1>Students Form</h1>
+
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

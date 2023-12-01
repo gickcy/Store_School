@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+         <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .login-container {
+            width: 40%;
+            height: 50%;
+            max-width: 50%;
+            margin: auto;
+            margin-top: 20%;
+            background-color: rgb(182, 175, 77);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container a {
+            background-color: #132013;
+            color: white;
+            padding: 10px 15px;
+           
+            margin-left: 30%;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            height: 80px;
+           
+        }
+.login-container a:hover{
+    background-color: #234124;
+}
+.login-container a{
+    text-decoration: none;
+    color: #fff;
+}
+h2{
+    
+    text-align: center;
+}
+        </style>
+</head>
+<body>
+ <div class="login-container">
+    <h2><b>Order Confirmed!</b></h2>
+
+   <a href="{% url 'home' %}">Click here to Return to Home Page</a>
+     </div>>
+</body>
+</html>
